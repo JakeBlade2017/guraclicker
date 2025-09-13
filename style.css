@@ -1,5 +1,7 @@
 * {
-    font-family: "Playpen Sans", cursive;
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Mute icon style*/
@@ -13,6 +15,7 @@
 
 /* Styles the instructions */
 #instructions {
+    text-align: center;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
@@ -22,13 +25,15 @@
     font-size: 45px;
 }
 
+/* Styles the text counter */
 #txtCounter {
+    text-align: center;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
     color: white;
     position: relative;
-    top: 230px;
+    top: 200px;
     font-size: 40px;
 }
 
@@ -36,7 +41,7 @@
 #GawrGura {
     position: relative;
     display: block;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 55%);
     left: 50%;
     top: 50%;
     cursor: pointer;
@@ -51,63 +56,4 @@
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 10s;
-}
-
-/* Popup style */
-.popup .overlay{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.popup .content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    width: 450px;
-    height: 220px;
-    z-index: 2;
-    text-align: center;
-    padding: 20px;
-    border-radius: 15px;
-    box-sizing: border-box;
-}
-
-.popup .close-btn{
-    cursor: pointer;
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    top: 90%;
-    transform: translate(-50%, -50%);
-    width: 90px;
-    height: 30px;
-    background: #222;
-    color: #fff;
-    font-size: 17px;
-    line-height: 30px;
-    border-radius: 7px;
-    text-align: center;
-}
-
-.popup .content h1 {
-    position: absolute;
-    left: 45%;
-    right: 60%;
-    transform: translate(-50%, -50%);
-}
-
-.popup .content p {
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    right: 20px;
-    line-height: 1.5;
-    transform: translateX(-50%, -50%);
-    color: #666;
 }

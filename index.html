@@ -1,64 +1,56 @@
+<!DOCTYPE html>
 <html>
+
 <head>
   <title>Gura Clicker!</title>
-  <link rel="icon" type="image/x-icon" href="/icons/gura_icon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/icons/gura_icon.png" />
+  <link rel="stylesheet" href="style.css" />
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
 
   <!-- Scriptps -->
   <script src="counterScript.js"></script>
-  <script src="popupScript.js"></script>
 </head>
 
-<body style="background-color: #30769d;">
+<body style="background-color: #30769d">
   <!-- Background music -->
-  <audio id="bgMusic" src="sounds/bgmusic_1.ogg" loop></audio>
-  <audio id="dancinMusic" src="sounds/dancin_background.mp3"></audio>
+  <audio id="bgMusic" autoplay loop>
+    <source src="audio/bgmusic_1.ogg" type="audio/mpeg">
+  </audio>
+
+  <audio id="dancinMusic" src="audio/dancin_background.mp3"></audio>
 
   <!-- a Audio XD -->
-  <audio id="aGura" src="sounds/a.ogg"></audio>
+  <audio id="aGura" src="audio/a.ogg"></audio>
 
   <!-- Gura dancin -->
-  <center>
-    <img id="DancinGura" src="https://i.pinimg.com/originals/49/c9/b5/49c9b557693afc9db172dc4118463b9e.gif" alt="It's Gura dancing!">
-  </center>
+  <img id="DancinGura" src="https://i.pinimg.com/originals/49/c9/b5/49c9b557693afc9db172dc4118463b9e.gif"
+    alt="It's Gura dancing!" />
 
   <!-- Text -->
-  <center>
-    <h1 id="instructions">Click 100 times the Gura plushie! :3</h1>
+  <h1 id="instructions">Click 100 times the Gura plushie! :3</h1>
 
-    <h2 id="txtCounter">100 times left!</h2>
-  </center>
+  <h2 id="txtCounter">100 times left!</h2>
 
   <!-- Gura -->
-  <img id="GawrGura" src="https://tr.rbxcdn.com/6eec03904c5f115d1ce2186e38b7e331/420/420/Hat/Webp" alt="It's Gura!" onclick="delayPlayFX()">
-  <audio id="plushSound" src="sounds/plush-squeak.mp3"></audio>
+  <img id="GawrGura" src="images/00000.png" alt="Gura plushie" style="height: 420px" onclick="playFX()" />
+  <audio id="plushSound" src="audio/plush-squeak.ogg"></audio>
 
   <script>
     function playFX() {
       var soundEffect = document.getElementById("plushSound");
-      soundEffect.play();
+      return soundEffect.play();
     }
 
+    /* It is supposed to add delay when user clicks the plushie but, there are better ways :P */
     function delayPlayFX() {
-      setTimeout(playFX, 125); // Delay playFX by 0.25 second
+      setTimeout(playFX, playFX.duration * 1000); // Delay playFX by 0.05 second
     }
   </script>
 
-  <div class="popup">
-    <div class="overlay"></div>
-    <div class="content">
-      <div class="close-btn">Let's go!</div>
-      <h1>Hi!</h1>
-      <p>
-        Thank you for playing my game clicker, it's very basic, but... hope u like it, if you reach the 100 clicks you will get
-        a surprise (˶˃ ᵕ ˂˶)
-      </p>
-    </div>
-  </div>
 </body>
+
 </html>
