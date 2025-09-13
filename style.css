@@ -4,15 +4,6 @@
     font-style: normal;
 }
 
-/* Mute icon style*/
-#muteBtnImage {
-    position: fixed;
-    bottom: 8px;
-    left: 16px;
-    width: 3.5%;
-    cursor: pointer;
-}
-
 /* Styles the instructions */
 #instructions {
     text-align: center;

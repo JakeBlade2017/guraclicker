@@ -1,10 +1,6 @@
-let counter = 5; // Obviously is the counter variable
+let counter = 100; // Obviously is the counter variable
 let isClickProcessing = false; // This is for click delay
 let colorInterval; // Used for random colors
-
-function togglePopup(){
-  document.getElementById("popup-1").classList.toggle("active")
-}
 
 document.addEventListener('DOMContentLoaded', function() {
   /* Images */
