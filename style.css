@@ -1,50 +1,125 @@
+:root {
+    /* Easier to tweak globally */
+    --instruction-font: clamp(1.8rem, 6vh, 4rem);
+    --counter-font: clamp(1.5rem, 5vh, 3rem);
+    --gura-size: clamp(45vh, 20vh, 25vh);
+}
+
+/* Global font */
 * {
     font-family: "Delius", cursive;
-    font-weight: 400;
-    font-style: normal;
+    box-sizing: border-box;
 }
 
-/* Styles the instructions */
+/* Instructions text */
 #instructions {
-    text-align: center;
     font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    color: white;
-    position: relative;
-    top: 160px;
-    font-size: 45px;
-}
-
-/* Styles the text counter */
-#txtCounter {
+    font-weight: 700;
     text-align: center;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
     color: white;
-    position: relative;
-    top: 200px;
-    font-size: 40px;
-}
-
-/* Sets Gawr Gura plushie position */
-#GawrGura {
-    position: relative;
-    display: block;
-    transform: translate(-50%, 55%);
+    position: absolute;
+    top: 18vh;
     left: 50%;
-    top: 50%;
-    cursor: pointer;
+    transform: translateX(-50%);
+    font-size: var(--instruction-font);
+    margin: 0 -100% -100% 0;
+    max-width: 90%;
+    line-height: 1.2;
 }
 
-/* It's Gura Dancin! (default transparency is 0) */
+/* Counter text */
+#txtCounter {
+    font-optical-sizing: auto;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 30vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--counter-font);
+    margin: 0;
+}
+
+/* Plushie and Dancing Gura share same position and size */
+#GawrGura,
 #DancinGura {
     position: absolute;
     display: block;
     left: 50%;
-    top: 75%;
+    top: 65vh;
     transform: translate(-50%, -50%);
+    width: var(--gura-size);
+    height: auto;
+    cursor: pointer;
+    max-width: 80%;
+}
+
+#DancinGura {
     opacity: 0;
-    transition: opacity 10s;
+    transition: opacity 2s ease-in-out;
+}
+
+/* Gura plushie actions when it's clicked */
+#GawrGura:active{
+    width: 38vh;
+    height: auto;
+}
+
+/* Fullscreen overlay */
+.overlay {
+    position: fixed;
+    inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(75px);
+
+    display: flex; /* Flexbox will center contents */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Phone image or icon */
+.phone {
+    width: min(40%, 250px); /* responsive scaling: max width is 250px */
+    height: auto;
+}
+
+/* Message text */
+.message {
+    top: 50px;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    font-size: clamp(1.2rem, 4vw, 2.5rem); /* responsive text size */
+}
+
+/* Phone and message opacity animation */
+.phone, .message{
+    animation-name: message-transparency;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes message-transparency {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 10%;
+    }
+}
+
+/* Hide everything in landscape */
+@media only screen and (orientation: landscape) {
+    .overlay {
+        display: none;
+    }
 }

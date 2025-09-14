@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.backgroundColor = getRandomColor();
               }, 1000); // Change background color every second (theorically a beat)
             }, 31435) // 31.435 seconds (Where song beat starts)
-          }, 5000); // 5 second (why I added this?, that's why you should comment the functionality of the code lines)
+          }, 5000); // 5 seconds to make gura dancin gif be visible
 
           dancinMusic.addEventListener("ended", function(){
             location.reload(); // Reloads website when finishes the showtime!
@@ -47,6 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         isClickProcessing = false;
       }, soundEffect.duration * 1000); // Just the sound effect duration multiplied by 1000 to convert it to milliseconds
+         // plush squeak sound lenght 0.394331s (based on Chrome, other browsers may be a bit different)
+         // converted lenght 394.33099999999996ms
     }
   });
 });

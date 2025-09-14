@@ -2,23 +2,29 @@
 <html>
 
 <head>
-  <title>Gura Clicker!</title>
+  <!-- Html type -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- Device Viewport (useful for css)-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Scripts -->
+  <script src="counterScript.js"></script>
+
+  <!-- Font import -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+  </style>
+  
+  <!-- Website icon, css and title -->
   <link rel="icon" type="image/x-icon" href="./icons/gura_icon.png" />
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
-
-  <!-- Scriptps -->
-  <script src="counterScript.js"></script>
+  <title>Gura Clicker</title>
 </head>
 
 <body style="background-color: #30769d">
   <!-- Background music -->
-  <audio id="bgMusic" autoplay loop>
-    <source src="audio/bgmusic_1.ogg" type="audio/mpeg">
+  <audio id="bgMusic" loop>
+    <source src="audio/bgmusic_1.ogg">
   </audio>
 
   <audio id="dancinMusic" src="audio/dancin_background.mp3"></audio>
@@ -29,28 +35,34 @@
   <!-- Gura dancin -->
   <img id="DancinGura" src="https://i.pinimg.com/originals/49/c9/b5/49c9b557693afc9db172dc4118463b9e.gif"
     alt="It's Gura dancing!" />
-
-  <!-- Text -->
-  <h1 id="instructions">Click 100 times the Gura plushie! :3</h1>
-
-  <h2 id="txtCounter">100 times left!</h2>
-
-  <!-- Gura -->
-  <img id="GawrGura" src="images/00000.png" alt="Gura plushie" style="height: 420px" onclick="playFX()" />
+  
+  <!-- Gura plush -->
+  <img id="GawrGura" src="images/gura_plushie.png" alt="Gura plushie" onclick="playFX()" />
   <audio id="plushSound" src="audio/plush-squeak.ogg"></audio>
 
+  <!-- Text -->
+  <p id="instructions">Click 100 times the Gura plushie!</p>
+  <p id="txtCounter">100 times left!</p>
+
+  <!-- Device rotate message-->
+  <div class="overlay">
+      <img class="phone" src="/icons/device_orientation.png" alt="Device orientation icon">
+      <div class="message">Please rotate your device!</div>
+  </div>
+
+  <!-- js scripting inside HTML (just for the clicking sound)-->
   <script>
+    var soundEffect = document.getElementById("plushSound"); // Reference to plush audio file
     function playFX() {
-      var soundEffect = document.getElementById("plushSound");
       return soundEffect.play();
     }
 
     /* It is supposed to add delay when user clicks the plushie but, there are better ways :P */
     function delayPlayFX() {
-      setTimeout(playFX, playFX.duration * 1000); // Delay playFX by 0.05 second
+      setTimeout(playFX, soundEffect.duration * 1000); // Delay is determined by the plush squeak audio file duration in seconds multiplied by 1000 to convert it to ms
+      // plush squeak sound lenght 0.394331s (based on Chrome, other browsers may be a bit different)
+      // converted lenght 394.33099999999996ms
     }
   </script>
-
 </body>
-
 </html>
