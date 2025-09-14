@@ -23,3 +23,4 @@ https://jakeblade2017.github.io/guraclicker/
 
 ## Enjoy!
 
+[![Gura spinnin :P](https://raw.githubusercontent.com/JakeBlade2017/guraclicker/refs/heads/main/images/gura_spinning.webp "Gura spinning made by SeafoamBoi")](https://x.com/SeafoamBoi "Crator X profile")
