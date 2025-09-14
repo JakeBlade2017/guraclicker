@@ -7,7 +7,7 @@ Guraclicker is a simple web-based clicking game. The goal is to click on Plushie
 ### Running locally
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/guraclicker.git
+    git clone https://github.com/JakeBlade2017/guraclicker.git
     ```
 2. Open `index.html` in your browser.
 
